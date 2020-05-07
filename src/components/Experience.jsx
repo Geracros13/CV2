@@ -1,18 +1,22 @@
 import React from "react";
+import H2Styled from "../styled/H2Styled";
+import H3Styled from "../styled/H3Styled";
+import PStyled from "../styled/PStyled";
 
 const Experience = (props) => {
 	return (
 		<div className="Experience">
+			<H2Styled name="Experience" />
 			<div className="Experience-container">
 				{props.data.map((expe, index) => (
 					<div className="Experience-item" key={`Expe-${index}`}>
-						<h3>
+						<H3Styled>
 							{expe.company} - {expe.jobTitle}
-						</h3>
-						<p>{expe.jobDescription}</p>
-						<span>
-							{expe.startDate} - {expe.endDate}
-						</span>
+							<span>
+								- {expe.startDate} - {expe.endDate}
+							</span>
+						</H3Styled>
+						<PStyled name={expe.jobDescription}></PStyled>
 					</div>
 				))}
 			</div>
