@@ -14,7 +14,7 @@ const Certificates = (props) => {
 							{cert.name} - {cert.institution}
 							<span> {cert.date}</span>
 						</H3Styled>
-						<PStyled>{cert.description}</PStyled>
+						<PStyled name={cert.description} />
 					</div>
 				))}
 			</div>
