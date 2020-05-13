@@ -16,6 +16,7 @@ const AboutImg = styled.img`
 	margin: 0 auto;
 	display: block;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+	object-fit: cover;
 `;
 const AboutName = styled.div`
 	text-align: center;

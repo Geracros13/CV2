@@ -2,7 +2,6 @@ import React from "react";
 import H2Styled from "../styled/H2Styled";
 import H3Styled from "../styled/H3Styled";
 import LabelStyled from "../styled/LabelStyled";
-import PStyled from "../styled/PStyled";
 import Line from "../styled/Line";
 
 const Certificates = (props) => {

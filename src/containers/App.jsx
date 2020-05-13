@@ -12,20 +12,17 @@ import Skills from "../components/Skills";
 import useGetData from "../hooks/useGetData";
 
 const GlobalStyle = createGlobalStyle`
-
 body{
 	font-family: 'Lato', sans-serif;
 	margin: 0;
 	padding: 0;
 	background: #fdfffc;
 }
-
 `;
 
 const spin = keyframes`
 0% { transform: rotate(0deg) }
 100% { transform: rotate(360deg) }
-
 `;
 
 const LoaderContainer = styled.div`
@@ -55,10 +52,6 @@ const Loader = styled.div`
 
 const App = () => {
 	const data = useGetData();
-	console.log(data);
-	// data.length === 0 ? <h1>Cargando...</h1>
-	// Esta linea de codigo la pusimos porque necesitamos que primero traiga
-	// la informacion de la API, y por eso mostramos cargando, ya cuando la trajo, carga el componente
 
 	return data.length === 0 ? (
 		<LoaderMobile>
