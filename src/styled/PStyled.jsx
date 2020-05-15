@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const StyledP = styled.p`
 	font-weight: 300;
@@ -8,5 +9,9 @@ const StyledP = styled.p`
 `;
 
 const PStyled = ({ name }) => <StyledP>{name}</StyledP>;
+
+PStyled.propTypes = {
+	name: PropTypes.string.isRequired,
+};
 
 export default PStyled;

@@ -2,6 +2,7 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import H2Styled from "../styled/H2Styled";
 import Line from "../styled/Line";
+import PropTypes from "prop-types";
 
 const SkillsContainer = styled.div`
 	display: grid;
@@ -81,6 +82,10 @@ const Skills = (props) => {
 			</SkillsContainer>
 		</div>
 	);
+};
+
+Skills.propTypes = {
+	optionalArray: PropTypes.array,
 };
 
 export default Skills;

@@ -3,6 +3,7 @@ import H2Styled from "../styled/H2Styled";
 import H3Styled from "../styled/H3Styled";
 import LabelStyled from "../styled/LabelStyled";
 import Line from "../styled/Line";
+import PropTypes from "prop-types";
 
 const Certificates = (props) => {
 	return (
@@ -24,6 +25,10 @@ const Certificates = (props) => {
 			</div>
 		</div>
 	);
+};
+
+Certificates.propTypes = {
+	optionalArray: PropTypes.array,
 };
 
 export default Certificates;

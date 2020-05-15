@@ -3,6 +3,7 @@ import H2Styled from "../styled/H2Styled";
 import H3Styled from "../styled/H3Styled";
 import LabelStyled from "../styled/LabelStyled";
 import Line from "../styled/Line";
+import PropTypes from "prop-types";
 
 const Education = (props) => {
 	return (
@@ -26,6 +27,10 @@ const Education = (props) => {
 			</div>
 		</div>
 	);
+};
+
+Education.propTypes = {
+	optionalArray: PropTypes.array,
 };
 
 export default Education;

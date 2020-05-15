@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const StyledH2 = styled.h2`
 	font-family: "Roboto", sans-serif;
@@ -11,5 +12,9 @@ const StyledH2 = styled.h2`
 `;
 
 const H2Styled = ({ name }) => <StyledH2>{name}</StyledH2>;
+
+H2Styled.propTypes = {
+	name: PropTypes.string.isRequired,
+};
 
 export default H2Styled;

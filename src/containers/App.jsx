@@ -22,6 +22,7 @@ body{
 
 const App = () => {
 	const data = useGetData();
+	console.log(data);
 
 	return data.length === 0 ? (
 		<Loader />

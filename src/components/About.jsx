@@ -1,6 +1,7 @@
 import React from "react";
 import Social from "./Social";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const AboutStyle = styled.div`
 	text-align: center;
@@ -72,6 +73,15 @@ const About = ({ avatar, name, profession, bio, address, social }) => {
 			</div>
 		</AboutStyle>
 	);
+};
+
+About.propTypes = {
+	avatar: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired,
+	profession: PropTypes.string.isRequired,
+	bio: PropTypes.string.isRequired,
+	address: PropTypes.string.isRequired,
+	social: PropTypes.array.isRequired,
 };
 
 export default About;

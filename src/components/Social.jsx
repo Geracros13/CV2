@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
+import PropTypes from "prop-types";
 
 const SocialStyled = styled.div`
 	margin: 0;
@@ -68,6 +69,10 @@ const Social = (props) => {
 			)}
 		</SocialStyled>
 	);
+};
+
+Social.propTypes = {
+	optionalArray: PropTypes.array,
 };
 
 export default Social;

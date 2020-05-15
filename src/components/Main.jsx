@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const MainStyled = styled.div`
 	display: grid;
@@ -24,6 +25,10 @@ const Main = ({ children }) => {
 			<MainContainer>{children}</MainContainer>
 		</MainStyled>
 	);
+};
+
+Main.propTypes = {
+	optionalArray: PropTypes.array,
 };
 
 export default Main;

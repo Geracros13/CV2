@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const StyledLabel = styled.label`
 	font-weight: 300;
@@ -11,5 +12,9 @@ const StyledLabel = styled.label`
 `;
 
 const LabelStyled = ({ children }) => <StyledLabel>{children}</StyledLabel>;
+
+LabelStyled.propTypes = {
+	optionalArray: PropTypes.array,
+};
 
 export default LabelStyled;

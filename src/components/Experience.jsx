@@ -3,6 +3,7 @@ import H2Styled from "../styled/H2Styled";
 import H3Styled from "../styled/H3Styled";
 import LabelStyled from "../styled/LabelStyled";
 import Line from "../styled/Line";
+import PropTypes from "prop-types";
 
 const Experience = (props) => {
 	return (
@@ -26,6 +27,10 @@ const Experience = (props) => {
 			</div>
 		</div>
 	);
+};
+
+Experience.propTypes = {
+	optionalArray: PropTypes.array,
 };
 
 export default Experience;
