@@ -23,21 +23,16 @@ steps:
       pushd $(uiSource)
       npm install
       npm run build
-      popd
-    displayName: "Build UI"
+    displayName: "Build Aplication"
 
-  - task: ArchiveFiles@2
-    displayName: Archive
+  - task: SonarCloudPrepare@1
     inputs:
-      rootFolderOrFile: "$(uiBuild)"
-      includeRootFolder: false
-      archiveType: "zip"
-      archiveFile: "$(Build.ArtifactStagingDirectory)/ui-$(Build.BuildId).zip"
-      replaceExistingArchive: true
+      SonarCloud: 'cv'
+      organization: 'gerardito'
+      scannerMode: 'Other'
 
-  - task: PublishBuildArtifacts@1
-    displayName: Publish Artifacts
+  - task: SonarCloudAnalyze@1
+
+  - task: SonarCloudPublish@1
     inputs:
-      PathtoPublish: "$(Build.ArtifactStagingDirectory)"
-      ArtifactName: "drop"
-      publishLocation: "Container"
+      pollingTimeoutSec: '300'
