@@ -29,7 +29,20 @@ steps:
     inputs:
       SonarCloud: 'cv'
       organization: 'gerardito'
-      scannerMode: 'Other'
+      scannerMode: 'CLI'
+      configMode: manual
+      cliProjectKey: 'cv-gerardito'
+      cliProjectName: 'react-cv'
+      extraProperties: |
+        # Additional properties that will be passed to the scanner, 
+        # Put one key=value per line, example:
+        sonar.exclusions=**/*.stories.js,**/*.spec.js,**/*.spec.ts, **/*.spec.tsx, **/index.ts, **/index.js,scripts/**,coverage/**,**/node_modules/**,**/dist/**,**/__mocks__/**,examples/**,jest.config.js,packages/vanilla/**
+        sonar.javascript.lcov.reportPaths=coverage/lcov.info
+        sonar.sourceEncoding=UTF-8
+        sonar.verbose=true
+        sonar.host.url=https://sonarcloud.io
+        sonar.cfamily.build-wrapper-output.bypass=true
+    condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
 
   - task: SonarCloudPublish@1
     inputs:
