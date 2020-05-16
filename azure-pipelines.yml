@@ -19,12 +19,6 @@ steps:
       versionSpec: "10.x"
     displayName: "Install Node.js"
 
-  - script: |
-      pushd $(uiSource)
-      npm install
-      npm run build
-    displayName: "Build Aplication"
-
   - task: SonarCloudPrepare@1
     inputs:
       SonarCloud: 'cv'
@@ -44,6 +38,19 @@ steps:
         sonar.cfamily.build-wrapper-output.bypass=true
     condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
 
+
+
+  - script: |
+        pushd $(uiSource)
+        npm install
+        npm run build
+    displayName: "Build Aplication"
+      
   - task: SonarCloudPublish@1
-    inputs:
-      pollingTimeoutSec: '300'
+    displayName: 'Run Code Analysis'
+    condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
+
+
+  - task: SonarCloudPublish@1
+    displayName: 'Publish Quality Gate Result'
+    condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
